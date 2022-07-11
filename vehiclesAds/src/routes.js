@@ -1,4 +1,7 @@
 import PaginaInicial from "../src/pages/Home";
+import React from "react";
+
+import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 function Main() {
   const [count, setCount] = useState(0);
 
