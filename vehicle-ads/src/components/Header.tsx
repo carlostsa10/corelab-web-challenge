@@ -1,5 +1,5 @@
-import Lupa from "../assets/icons8-pesquisar.svg";
 import filtro from "../assets/icons8-opções-de-ordenação-50.png";
+import Lupa from "../assets/icons8-pesquisar.svg";
 
 import "../styles/header.css";
 

@@ -1,14 +1,14 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
 import editar from "../assets/icon-editar.svg";
-import fechar from "../assets/iconeFechar.svg";
+import heart from "../assets/icons8-copas-32.png";
+import fechar from "../assets/icons8-excluir.svg";
 import "../styles/modal.css";
 
-function ModalCar(props: any) {
+function ModalCar(cars: any) {
   function handleFavorite() {
     axios
-      .post(`http://localhost:4731/favorite/${props.id}`, {
-        id: props.id,
+      .post(`http://localhost:4731/favorite/${cars.id}`, {
+        id: cars.id,
       })
       .then((response) => {
         console.log(response);
@@ -18,8 +18,8 @@ function ModalCar(props: any) {
 
   function handleDelete() {
     axios
-      .post(`http://localhost:4731/delete/${props.id}`, {
-        id: props.id,
+      .post(`http://localhost:4731/delete/${cars.id}`, {
+        id: cars.id,
       })
       .then((response) => {
         console.log(response);
@@ -28,7 +28,7 @@ function ModalCar(props: any) {
   }
 
   return (
-    <div className="card" style={{ backgroundColor: props.color }}>
+    <div className="card" style={{ backgroundColor: cars.color }}>
       <div className="header">
         <div className="icons">
           <img src={editar} />
@@ -38,23 +38,20 @@ function ModalCar(props: any) {
             onClick={() => handleDelete()}
             className="header-icons"
           />
-          <img
-            src="https://img.icons8.com/ios/50/000000/heart-with-arrow--v1.png"
-            onClick={() => handleFavorite()}
-          />
+          <img src={heart} onClick={() => handleFavorite()} />
         </div>
         <div className="content">
           <p>
-            <strong>{props.name}</strong>
+            <strong>{cars.name}</strong>
           </p>
           <p>
-            <strong>Preço:</strong> {props.price}
+            <strong>Preço:</strong> {cars.price}
           </p>
           <p className="description">
-            <strong>Descrição:</strong> Loremi{props.description}
+            <strong>Descrição:</strong> Loremi{cars.description}
           </p>
           <p>
-            <strong>Ano:</strong> {props.year}
+            <strong>Ano:</strong> {cars.year}
           </p>
           {/* <p><strong>Cor:</strong></p> */}
         </div>
