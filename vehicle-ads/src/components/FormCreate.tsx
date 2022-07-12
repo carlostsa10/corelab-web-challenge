@@ -1,7 +1,5 @@
-import api from "../service/api";
-import editar from "../assets/iconeEditar.svg";
-import fechar from "../assets/iconeFechar.svg";
 import { useState } from "react";
+import api from "../service/api";
 import "../styles/modal.css";
 import Input from "./InputCreate";
 
@@ -42,7 +40,7 @@ function ModalFavorite({ setOpenForm, ...props }: any) {
       name: "color",
       type: "text",
       required: true,
-      label: "Marca:",
+      label: "Cor:",
     },
     {
       id: 4,
@@ -60,11 +58,11 @@ function ModalFavorite({ setOpenForm, ...props }: any) {
     },
   ];
 
-  function handleValues(e) {
+  function handleValues(e: { target: { name: any; value: any } }) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  async function handleSubmit(e) {
+  async function handleSubmit(e: { preventDefault: () => void }) {
     e.preventDefault();
 
     await api.post("/newvh", form);
@@ -78,7 +76,7 @@ function ModalFavorite({ setOpenForm, ...props }: any) {
             value={form[vehicle.name]}
             key={vehicle.id}
             {...vehicle}
-            onChange={(e) => handleValues(e)}
+            onChange={(e: any) => handleValues(e)}
           />
         ))}
 

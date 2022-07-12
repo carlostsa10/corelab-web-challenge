@@ -10,6 +10,7 @@
   width: 200px;
   height: 200px;
   background-color: pink;
+  border-radius: 15px;
 }
 
 img {
@@ -37,13 +38,10 @@ img {
 
 .form-layout {
   background-color: gray;
-  height: fit-content;
-  width: 400px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
+  height: 600px;
+  width: 420px;
+  position: absolute;
+  border-radius: 25px;
 }
 
 /* Input */
@@ -51,9 +49,15 @@ img {
 .inputCreate {
   display: flex;
   flex-direction: column;
-  width: 100%;
   height: fit-content;
   gap: 10px;
-  border-radius: 25px;
   padding: 13px;
+}
+
+.form {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

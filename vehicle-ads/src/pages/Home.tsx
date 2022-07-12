@@ -1,51 +1,29 @@
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import React, { useState, useEffect } from "react";
-import api from "../service/api";
-import logo from "../assets/logoVAds.png";
-import Header from "../components/Header";
+import { useState } from "react";
+import logosemfund from "../assets/logosemfund.png";
+import { Create } from "./Create";
 
-import ModalCar from "../components/ModalCar";
-import FormCreate from "../components/FormCreate";
+import "../styles/footer.css";
 import "../styles/home.css";
 
 export function Home() {
   const [openForm, setOpenForm] = useState(false);
-  const [cars, setCars] = useState([]);
-
-  async function loadCars() {
-    try {
-      const { data } = await api.get("/vhs");
-
-      setCars([...data]);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  useEffect(() => {
-    loadCars();
-  }, []);
 
   return (
     <>
-      <div className="container-layout">
-        <section className="container">
-          <section className="sideA logo"></section>
-          <section className="sideB">
-            {<Header setOpenForm={setOpenForm} />}
-            <h2 className="title">Meus Favoritos</h2>
-            <div className="favorites"></div>
-
-            <h2 className="title">Meus Anúncios</h2>
-            <div className="my-car-announces">
-              {cars.map((car) => (
-                <ModalCar key={car.id} {...car} />
-              ))}
-            </div>
-          </section>
-        </section>
-      </div>
-      {openForm && <FormCreate setOpenForm={setOpenForm} />}
+      <Create />
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-content-logo">
+            <img src={logosemfund} alt="logo" />
+          </div>
+          <div className="footer-content-text">
+            <p>
+              <span>VAds</span> desenvolvido com ♡ por CT.
+            </p>
+            <div className="footer-links"></div>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
