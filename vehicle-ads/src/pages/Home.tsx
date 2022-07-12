@@ -1,40 +1,51 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-
+import api from "../service/api";
 import logo from "../assets/logoVAds.png";
 import Header from "../components/Header";
 
 import ModalCar from "../components/ModalCar";
-import ModalFavorite from "../components/ModalCar";
+import FormCreate from "../components/FormCreate";
+import "../styles/home.css";
 
 export function Home() {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const [openForm, setOpenForm] = useState(false);
+  const [cars, setCars] = useState([]);
 
-  const [vehicles, setVehicles] = useState([]);
+  async function loadCars() {
+    try {
+      const { data } = await api.get("/vhs");
+
+      setCars([...data]);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    loadCars();
+  }, []);
 
   return (
     <>
-      <section className="container">
-        <section className="sideA">
-          <img src={logo} className="center w-12"></img>
-        </section>
-        <section className="sideB ">
-          <div>
-            <Header />
-          </div>
-          <div className="favorites flex">
+      <div className="container-layout">
+        <section className="container">
+          <section className="sideA logo"></section>
+          <section className="sideB">
+            {<Header setOpenForm={setOpenForm} />}
             <h2 className="title">Meus Favoritos</h2>
-            <ModalFavorite />
-            <div className="cards-wrapper"></div>
-          </div>
+            <div className="favorites"></div>
 
-          <div className="my-car-announces">
             <h2 className="title">Meus Anúncios</h2>
-            <ModalCar />
-          </div>
+            <div className="my-car-announces">
+              {cars.map((car) => (
+                <ModalCar key={car.id} {...car} />
+              ))}
+            </div>
+          </section>
         </section>
-      </section>
+      </div>
+      {openForm && <FormCreate setOpenForm={setOpenForm} />}
     </>
   );
 }
