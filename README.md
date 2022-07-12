@@ -18,7 +18,7 @@ Aqui você pode cadastrar seus veículos com todos os detalhes possíveis para u
  <a href="#objetivo">Objetivo</a> •
  <a href="#roadmap">Roadmap</a> • 
  <a href="#Demonstração">Demonstração da aplicação</a> • 
- <a href="#requisitos">Pré requisitos</a>
+ <a href="#requisitos">Pré requisitos</a> • 
  <a href="#tecnologias">Tecnologias</a> • 
  <a href="#contribuição">Contribuição</a> • 
 </p>
