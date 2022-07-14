@@ -1,8 +1,8 @@
 import axios from "axios";
-import editar from "../assets/icon-editar.svg";
-import heart from "../assets/icons8-copas-32.png";
-import fechar from "../assets/icons8-excluir.svg";
-import "../styles/modal.css";
+import editar from "../../assets/icon-editar.svg";
+import heart from "../../assets/icons8-copas-32.png";
+import fechar from "../../assets/icons8-excluir.svg";
+import "./style.css";
 
 function ModalCar(cars) {
   function handleFavorite() {
