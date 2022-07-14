@@ -1,7 +1,7 @@
 
-<h4 align="center"> 
+<h1 align="center"> 
 	🚧  vehicleAds 🛠️ Em construção... 🛠️  🚧
-</h4>
+</h1>
 
 # Vehicle Ads
 
@@ -22,7 +22,7 @@ Aqui você pode cadastrar seus veículos com todos os detalhes possíveis para u
  <a href="#tecnologias">Tecnologias</a> • 
  <a href="#contribuição">Contribuição</a> • 
 </p>
-## Pagina inicial
+<h3> Pagina inicial </h3>
 
 Iniciando o projeto por esta pagina home, onde apresenta os cards de carros e botões para adicionar e filtrar.
 
