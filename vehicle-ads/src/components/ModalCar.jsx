@@ -4,7 +4,7 @@ import heart from "../assets/icons8-copas-32.png";
 import fechar from "../assets/icons8-excluir.svg";
 import "../styles/modal.css";
 
-function ModalCar(cars: any) {
+function ModalCar(cars) {
   function handleFavorite() {
     axios
       .post(`http://localhost:4731/favorite/${cars.id}`, {

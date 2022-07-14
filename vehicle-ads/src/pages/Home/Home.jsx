@@ -1,12 +1,10 @@
-import { useState } from "react";
-import logosemfund from "../assets/logosemfund.png";
+import "../../styles/footer.css";
+import "../../styles/home.css";
+
 import { Create } from "./Create";
 
-import "../styles/footer.css";
-import "../styles/home.css";
 
-export function Home() {
-  const [openForm, setOpenForm] = useState(false);
+export default function Home() {
 
   return (
     <>
@@ -14,7 +12,7 @@ export function Home() {
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-content-logo">
-            <img src={logosemfund} alt="logo" />
+            
           </div>
           <div className="footer-content-text">
             <p>

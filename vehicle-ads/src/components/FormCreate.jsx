@@ -3,14 +3,7 @@ import api from "../service/api";
 import "../styles/modal.css";
 import Input from "./InputCreate";
 
-function ModalFavorite({ setOpenForm, ...props }: any) {
-  type InputType = {
-    name: string;
-    brand: string;
-    color: string;
-    year: number;
-    plate: string;
-  };
+function FormCreate({ setOpenForm, ...props }) {
 
   const [form, setForm] = useState({
     name: "",
@@ -58,11 +51,11 @@ function ModalFavorite({ setOpenForm, ...props }: any) {
     },
   ];
 
-  function handleValues(e: { target: { name: any; value: any } }) {
+  function handleValues(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  async function handleSubmit(e: { preventDefault: () => void }) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     await api.post("/newvh", form);
@@ -76,7 +69,7 @@ function ModalFavorite({ setOpenForm, ...props }: any) {
             value={form[vehicle.name]}
             key={vehicle.id}
             {...vehicle}
-            onChange={(e: any) => handleValues(e)}
+            onChange={(e) => handleValues(e)}
           />
         ))}
 
@@ -95,4 +88,4 @@ function ModalFavorite({ setOpenForm, ...props }: any) {
   );
 }
 
-export default ModalFavorite;
+export default FormCreate;

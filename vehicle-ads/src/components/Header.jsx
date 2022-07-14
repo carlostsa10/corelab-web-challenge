@@ -3,7 +3,7 @@ import Lupa from "../assets/icons8-pesquisar.svg";
 
 import "../styles/header.css";
 
-export default function Header({ setOpenForm }: any) {
+export default function Header({ setOpenForm }) {
   function handleEdit() {}
   return (
     <>

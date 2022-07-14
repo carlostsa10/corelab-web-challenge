@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import Central from "../components/Central";
-import FormCreate from "../components/FormCreate";
-import Header from "../components/Header";
-import ModalCar from "../components/ModalCar";
-import api from "../service/api";
-import "../styles/home.css";
+import FormCreate from "../../components/FormCreate";
+import Header from "../../components/Header";
+import ModalCar from "../../components/ModalCar";
+import api from "../../service/api";
+import "../../styles/home.css";
 
 export function Create() {
   const [openForm, setOpenForm] = useState(false);
@@ -24,7 +23,7 @@ export function Create() {
     loadCars();
   }, []);
   return (
-    <Central>
+    <>
       {openForm && <FormCreate setOpenForm={setOpenForm} />}
       <div className="container-layout">
         <section className="container">
@@ -43,6 +42,6 @@ export function Create() {
           </section>
         </section>
       </div>
-    </Central>
+    </>
   );
 }
