@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import FormCreate from "../../components/FormCreate";
-import Header from "../../components/Header";
-import ModalCar from "../../components/ModalCar";
+import FormCreate from "../FormCreate";
 import api from "../../service/api";
-import "../../styles/home.css";
+import ModalCar from "../ModalCar";
+import Header from "../Header";
+import "./style.css";
 
-export function Create() {
+export default function Create() {
   const [openForm, setOpenForm] = useState(false);
   const [cars, setCars] = useState([]);
 
@@ -34,6 +34,7 @@ export function Create() {
             <div className="favorites"></div>
 
             <h3 className="title">Meus Anúncios</h3>
+
             <div className="my-car-announces">
               {cars.map((car) => (
                 <ModalCar key={car.id} {...car} />

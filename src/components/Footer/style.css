@@ -1,3 +1,7 @@
+.footer-content-logo img {
+  width: 100px;
+  height: auto;
+}
 .footer {
   display: flex;
 }
@@ -17,7 +21,7 @@
 }
 
 .footer-content-logo {
-  backgroudimage: url("../assets/logoVAds.png");
+  backgroudimage: url("../../assets/logosemfund.png");
   background-size: justify;
   background-position: center;
 }
