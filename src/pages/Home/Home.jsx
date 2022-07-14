@@ -1,27 +1,13 @@
-import "../../styles/footer.css";
-import "../../styles/home.css";
-
-import { Create } from "./Create";
-
+import Footer from "../../components/Footer";
+import Create from "../../components/Create";
+import { VehicleProvider } from "../../context/VehicleContext";
+import "./style.css";
 
 export default function Home() {
-
   return (
-    <>
+    <VehicleProvider>
       <Create />
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="footer-content-logo">
-            
-          </div>
-          <div className="footer-content-text">
-            <p>
-              <span>VAds</span> desenvolvido com ♡ por CT.
-            </p>
-            <div className="footer-links"></div>
-          </div>
-        </div>
-      </footer>
-    </>
+      <Footer />
+    </VehicleProvider>
   );
 }
