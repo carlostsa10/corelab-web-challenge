@@ -1,7 +1,6 @@
-import "../styles/modal.css";
-import "../styles/input.css";
+import "./style.css";
 
-function InputCreate({ value, onChange, ...inputProps }) {
+export default function InputCreate({ value, onChange, ...inputProps }) {
   const { label, name } = inputProps;
   return (
     <div className="inputCreate">
@@ -15,5 +14,3 @@ function InputCreate({ value, onChange, ...inputProps }) {
     </div>
   );
 }
-
-export default InputCreate;

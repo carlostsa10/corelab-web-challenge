@@ -1,7 +1,6 @@
-import filtro from "../assets/icons8-opções-de-ordenação-50.png";
-import Lupa from "../assets/icons8-pesquisar.svg";
-
-import "../styles/header.css";
+import Filtro from "../../assets/icons8-opções-de-ordenação-50.png";
+import Lupa from "../../assets/iconeLupa.svg";
+import "./style.css";
 
 export default function Header({ setOpenForm }) {
   function handleEdit() {}
@@ -15,7 +14,7 @@ export default function Header({ setOpenForm }) {
           className="input-search"
           // onChange={value => setCarName(value.target.value)}
         ></input>
-        <img src={filtro} />
+        <img src={Filtro} />
       </div>
 
       <button className="btn-header" onClick={() => setOpenForm(true)}>

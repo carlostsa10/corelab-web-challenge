@@ -1,10 +1,9 @@
 import { useState } from "react";
-import api from "../service/api";
-import "../styles/modal.css";
-import Input from "./InputCreate";
+import api from "../../service/api";
+import Input from "../InputCreate";
+import "./style.css";
 
-function FormCreate({ setOpenForm, ...props }) {
-
+export default function FormCreate({ setOpenForm, ...props }) {
   const [form, setForm] = useState({
     name: "",
     brand: "",
@@ -87,5 +86,3 @@ function FormCreate({ setOpenForm, ...props }) {
     </div>
   );
 }
-
-export default FormCreate;
