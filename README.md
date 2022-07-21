@@ -25,7 +25,7 @@ Aqui você pode cadastrar seus veículos com todos os detalhes possíveis para u
 
 Iniciando o projeto por esta pagina home, onde apresenta os cards de carros e botões para adicionar e filtrar.
 
-![image]([https://user-images.githubusercontent.com/92460525/178401316-4a583b6f-86a8-40dd-a524-cfb76066ac9d.png](https://i.ibb.co/fCTyG7W/art.png))
+![image](https://i.ibb.co/fCTyG7W/art.png)
 
 ## Adionando um veículo
 
