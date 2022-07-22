@@ -15,10 +15,11 @@
 }
 
 .btn-modalCreate {
+  all: none;
   padding: 0.5rem;
   margin: 25px;
   border-radius: 20px;
-  background-color: #4f67fd;
+  background-color: var(--azul-secundario);
   color: white;
   justify-content: flex-end;
 }

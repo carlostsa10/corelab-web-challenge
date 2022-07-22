@@ -8,13 +8,14 @@
 .card {
   display: flex;
   width: 200px;
-  height: 200px;
+  height: 230px;
   background-color: pink;
   border-radius: 15px;
 }
 
 img {
-  max-width: 30px;
+  max-width: 23px;
+  cursor: pointer;
 }
 
 .icons {
@@ -22,14 +23,18 @@ img {
   align-items: flex-end;
   justify-content: flex-end;
   gap: 2px;
-  padding: 5px;
+  padding: 8px;
 }
 
 .content {
-  padding: 10px;
+  padding-left: 10px;
 }
 
 .description {
   overflow-y: auto;
   max-height: 80px;
+}
+
+.content-name {
+  font-size: 22px;
 }

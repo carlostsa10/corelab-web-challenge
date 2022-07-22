@@ -56,8 +56,12 @@ export default function FormCreate({ setOpenForm, ...props }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
-    await api.post("/newvh", form);
+    try {
+      await api.post("/newvh", form);
+    } catch (error) {
+      console.log(error.message);
+    }
+    navigate("/");
   }
 
   return (
@@ -75,7 +79,7 @@ export default function FormCreate({ setOpenForm, ...props }) {
         <button
           className="btn-modalCreate"
           type="submit"
-          onClick={() => setOpenForm(false)}
+          onClick={() => handleSubmit()}
         >
           Salvar
         </button>
