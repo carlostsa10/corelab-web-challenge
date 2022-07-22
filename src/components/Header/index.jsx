@@ -18,7 +18,7 @@ export default function Header({ setOpenForm }) {
       </div>
 
       <button className="btn-header" onClick={() => setOpenForm(true)}>
-        ADICIONAR
+        + ADICIONAR
       </button>
     </>
   );

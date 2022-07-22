@@ -1,8 +1,8 @@
 .container {
   display: flex;
   background-color: white;
-  min-width: 890px;
-  min-height: 600px;
+  width: 940px;
+  height: 600px;
   margin-top: 14rem;
   border-radius: 20px;
   margin: 0 auto;
@@ -46,8 +46,15 @@
   flex-wrap: wrap;
   gap: 1rem;
   overflow-y: auto;
-  width: 100%;
-  padding-right: 1rem;
+  max-width: 100%;
+  margin-left: 15px;
+}
+
+.my-car-announces::-webkit-scrollbar {
+  width: 6px;
+}
+.my-car-announces::-webkit-scrollbar-thumb {
+  background: var(--azul-primario);
 }
 
 .title {

@@ -1,10 +1,12 @@
-import axios from "axios";
+import api from "../../service/api";
 import editar from "../../assets/icon-editar.svg";
 import heart from "../../assets/icons8-copas-32.png";
 import fechar from "../../assets/icons8-excluir.svg";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 
-function ModalCar(cars) {
+function ModalCar({ ...car }) {
+  const navigate = useNavigate();
   function handleFavorite() {
     axios
       .post(`http://localhost:4731/favorite/${cars.id}`, {
@@ -16,19 +18,19 @@ function ModalCar(cars) {
     window.location.href = "/";
   }
 
-  function handleDelete() {
-    axios
-      .post(`http://localhost:4731/delete/${cars.id}`, {
-        id: cars.id,
-      })
-      .then((response) => {
-        console.log(response);
+  async function handleDelete() {
+    try {
+      await api.delete(`deleteVehicle/${car.id}`, {
+        id: car.id,
       });
-    window.location.href = "/";
+    } catch (error) {
+      console.log(error.message);
+    }
+    navigate("/");
   }
 
   return (
-    <div className="card" style={{ backgroundColor: cars.color }}>
+    <div className="card" style={{ backgroundColor: car.color }}>
       <div className="header">
         <div className="icons">
           <img src={editar} />
@@ -41,17 +43,17 @@ function ModalCar(cars) {
           <img src={heart} onClick={() => handleFavorite()} />
         </div>
         <div className="content">
-          <p>
-            <strong>{cars.name}</strong>
+          <p className="content-name">
+            <strong>{car.name}</strong>
           </p>
           <p>
-            <strong>Preço:</strong> {cars.price}
+            <strong>Preço:</strong> {car.price}
           </p>
           <p className="description">
-            <strong>Descrição:</strong> Loremi{cars.description}
+            <strong>Descrição:</strong> Loremi{car.description}
           </p>
           <p>
-            <strong>Ano:</strong> {cars.year}
+            <strong>Ano:</strong> {car.year}
           </p>
           {/* <p><strong>Cor:</strong></p> */}
         </div>
