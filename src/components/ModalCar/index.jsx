@@ -4,18 +4,18 @@ import heart from "../../assets/icons8-copas-32.png";
 import fechar from "../../assets/icons8-excluir.svg";
 import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
+import { useEffect } from "react";
 
 function ModalCar({ ...car }) {
   const navigate = useNavigate();
-  function handleFavorite() {
-    axios
-      .post(`http://localhost:4731/favorite/${cars.id}`, {
-        id: cars.id,
-      })
-      .then((response) => {
-        console.log(response);
+  async function handleFavorite() {
+    try {
+      await api.post(`favorite/${car.id}`, {
+        id: car.id,
       });
-    window.location.href = "/";
+    } catch (error) {
+      console.log(error.data.message);
+    }
   }
 
   async function handleDelete() {
@@ -24,10 +24,12 @@ function ModalCar({ ...car }) {
         id: car.id,
       });
     } catch (error) {
-      console.log(error.message);
+      console.log(error.data.message);
     }
     navigate("/");
   }
+
+  useEffect(() => {}, []);
 
   return (
     <div className="card" style={{ backgroundColor: car.color }}>
